@@ -41,12 +41,6 @@
                 top: 18px;
             }
 
-            .top-left {
-                position: absolute;
-                left: 10px;
-                top: 18px;
-            }
-
             .content {
                 text-align: center;
             }
@@ -72,9 +66,6 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <div class="top-left links">
-                <a href="#">Soiree</a>
-            </div>                
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -85,21 +76,20 @@
                     @endauth
                 </div>
             @endif
-            @if(count($events) > 0)
-                @foreach($events as $event)
-                    <div class="content">
-                        <div class="title m-b-md">
-                            <u>Upcoming Event</u>
-                        </div>
-                        <div class="title m-b-md">
-                            {{$event->name}}<br>
-                            {{$event->date}}
-                        </div>
-                    </div>    
-                @endforeach 
-                @else
-                <p>No events created</p>
-            @endif
+
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel
+                </div>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+            </div>
         </div>
     </body>
 </html>
